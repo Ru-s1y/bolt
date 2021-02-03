@@ -122,7 +122,21 @@ header {
   margin-left: auto;
 }
 
-/* ---------- テーマ ---------- */
+.humbuger-menu {
+  margin-left: auto;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  text-decoration: none;
+  color: #ddd;
+  transition: .3s;
+}
+
+.humbuger-menu:hover {
+  color: #333;
+}
+
+/* ---------- theme ---------- */
 .theme {
   margin-top: 70px;
   padding: 250px 0;
@@ -143,8 +157,12 @@ header {
 /* ---------- What we can do ---------- */
 .what_we_can_do {
   background-color: var(--theme-color);
-  padding-top: 50px;
+  padding: 50px 0 25px 0;
   color: #fff;
+}
+
+.wwcd-inner {
+  display: flex;
 }
 
 .what_we_can_do h3 {
@@ -189,6 +207,7 @@ header {
 
 .olw-contents {
   font-size: 0;
+  display: block;
 }
 
 .olw-text {
@@ -197,11 +216,12 @@ header {
 
 .olw-button {
   margin-left: 90px;
-  padding-top: 14px;
+  /* padding-top: 14px; */
   vertical-align: top;
 }
 
 .olw-button a {
+  display: block;
   padding: 14px 20px;
 }
 
@@ -235,6 +255,10 @@ header {
   padding: 200px 0 200px 0;
 }
 
+.sns-inner {
+  font-size: 0;
+}
+
 .sns-icon {
   padding: 30px 0 30px 0;
   width: 185px;
@@ -246,11 +270,188 @@ header {
   background-color: #fff;
 }
 
+/* ---------- footer ---------- */
+
 .footer {
   padding: 20px 0 25px 0;
   text-align: right;
   color: #fff;
   background: var(--theme-color);
+}
+
+/* ---------- 以下レスポンシブ ---------- */
+
+/* ---------- スマホ用 ---------- */
+
+@media screen and (max-width: 767px) {
+  .inner {
+    width: 97%;
+  }
+
+  .header-button {
+    display: none;
+  }
+
+  /* theme */
+  .theme {
+    font-size: 80px;
+    padding: 160px 0 130px 0;
+  }
+
+  .theme-title {
+    margin-bottom: 20px;
+  }
+
+  /* what we can do */
+  .wwcd-inner {
+    display: block;
+    text-align: center;
+  }
+
+  .wwcd-image {
+    margin-bottom: 20px;
+  }
+
+  /* Our latest work */
+  .content-image {
+    display: block;
+    text-align: center;
+    margin: 0;
+  }
+
+  .content-image:nth-child(n+4) {
+    margin-top: 0;
+  }
+
+  .content-image:nth-child(3n+1) {
+    margin-top: 80px;
+  }
+
+  .content-image:first-child {
+    margin-top: 0;
+  }
+
+  .olw-text {
+    width: 100%;
+    margin-bottom: 40px;
+  }
+
+  .olw-button {
+    margin: 0;
+    text-align: center;
+  }
+
+  /* Our skills */
+  .menu-content {
+    display: block;
+    margin: 0 auto;
+    margin-top: 88px;
+  }
+
+  .menu-content:first-child {
+    margin-top: 0;
+  }
+
+  /* SNS */
+  .sns {
+    padding: 50px 15px;
+  }
+
+  .sns-inner {
+    width: 100%;
+  }
+
+  .sns-icon {
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+  }
+
+}
+
+/* ---------- タブレット用 ---------- */
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .inner {
+    width: 97%;
+  }
+
+  .humbuger-menu {
+    display: none;
+  }
+
+  /* What we can do */
+  .wwcd-inner {
+    display: block;
+    text-align: center;
+  }
+
+  .wwcd-image {
+    margin-bottom: 20px;
+  }
+
+  .wwcd-inner div p {
+    margin: 0 auto;
+    width: 80%;
+  }
+
+  /* Our latest work */
+  .content-image {
+    display: block;
+    margin: 0;
+    text-align: center;
+  }
+  
+  .content-image:nth-child(n+4) {
+    margin: 0;
+  }
+
+  .content-image:nth-child(3n+1) {
+    margin-top: 80px;
+  }
+
+  .content-image:first-child {
+    margin-top: 0;
+  }
+
+  .olw-text, .olw-button {
+    margin: 0 auto;
+  }
+
+  .olw-text {
+    display: block;
+    width: 100%;
+    padding-bottom: 40px;
+  }
+
+  /* Our skills */
+  .menu-content {
+    display: block;
+    margin:88px 0 0 0;
+  }
+
+  .menu-content:first-child {
+    margin-top: 0;
+  }
+}
+
+/* ---------- PC用 ---------- */
+
+@media screen and (min-width: 1200px) {
+  .inner {
+    width: 1100px;
+  }
+
+  .humbuger-menu {
+    display: none;
+  }
+
+  .what_we_can_do {
+    padding-bottom: 0;
+  }
+  .wwcd-image {
+    margin-bottom: 0;
+  }
 }
 
 /* ---------- 終わり ---------- */
