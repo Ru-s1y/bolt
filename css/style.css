@@ -1,7 +1,6 @@
 @charset "utf-8";
 
-/* テスト用 */
-
+/* ----------  テスト用 ----------  */
 /* 
   .cb{
     border: solid 1px red;
@@ -13,6 +12,15 @@
     border: solid 1px blue;
   } 
 */
+
+/* ---------- カスタムプロパティ ---------- */
+:root {
+  --theme-color: #74cfae;
+/* 
+  [呼び出し方]
+  background-color: var(--theme-color); 
+*/
+}
 
 /* ---------- 全体 ---------- */
 body {
@@ -56,10 +64,6 @@ body {
   margin: 0 auto;
 }
 
-/* .back-color {
-  background-color: #f2f2f2;
-} */
-
 .icons {
   padding: 15px 0;
   font-size: 40px;
@@ -69,7 +73,7 @@ body {
   font-size: 12px;
   padding: 14px 12px;
   color: white;
-  background-color: #74cfae;
+  background-color: var(--theme-color);
   transition: .3s;
   text-decoration: none;
 }
@@ -128,7 +132,7 @@ header {
   font-size: 90px;
   font-weight: 700;
   margin-bottom: 25px;
-  color: #74cfae;
+  color: var(--theme-color);
 }
 
 .theme-flavor {
@@ -138,7 +142,7 @@ header {
 
 /* ---------- What we can do ---------- */
 .what_we_can_do {
-  background-color: #74cfae;
+  background-color: var(--theme-color);
   padding-top: 50px;
   color: #fff;
 }
@@ -157,7 +161,7 @@ header {
   padding: 60px 0 70px 0;
 }
 
-.image-box {
+.images-container {
   padding: 40px 0 90px 0;
   font-size: 0;
 }
@@ -173,10 +177,12 @@ header {
 }
 
 .content-image:nth-child(3n+1) {
+  /* nは０から始まる */
   margin-left: 0;
 }
 
 .content-image:nth-child(n+4) {
+  /* n+4 : 4つ目以降 */
   margin-top: 80px;
 }
 
@@ -243,7 +249,7 @@ header {
   padding: 20px 0 25px 0;
   text-align: right;
   color: #fff;
-  background: #74cfae;
+  background: var(--theme-color);
 }
 
 /* ---------- 終わり ---------- */
