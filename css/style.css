@@ -167,6 +167,7 @@ header {
 }
 
 .content-image {
+  display: inline-block;
   opacity: 0.7;
   transition: .3s;
   margin-left: 100px;
