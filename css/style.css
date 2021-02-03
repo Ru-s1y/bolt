@@ -1,26 +1,26 @@
 @charset "utf-8";
 
+/* テスト用 */
 .cb{
   border: solid 1px red;
 }
 
+.cb-b {
+  border: solid 1px blue;
+}
+
+/* div {
+  border: solid 1px yellow;
+} */
+
+/* ---------- 全体 ---------- */
 body {
   color: #333;
+  font-family: Lato;
+  background-color: #f2f2f2;
 }
 
-.inner {
-  width: 1100px;
-  border: solid 1px blue;
-  margin: 0 auto;
-}
-
-
-/* 共通 */
-
-.section {
-  border: solid 1px black;
-}
-
+/* ---------- レイアウト系 ---------- */
 .t-center {
   text-align: center;
 }
@@ -41,8 +41,27 @@ body {
   display: inline-block;
 }
 
-.back-color {
+.p-relative {
+  position: relative;
+}
+
+.p-absolute {
+  position: absolute;
+}
+
+/* ---------- 共通 ---------- */
+.inner {
+  width: 1100px;
+  margin: 0 auto;
+}
+
+/* .back-color {
   background-color: #f2f2f2;
+} */
+
+.icons {
+  padding: 15px 0;
+  font-size: 40px;
 }
 
 .content-button {
@@ -50,6 +69,13 @@ body {
   padding: 14px 12px;
   color: white;
   background-color: #74cfae;
+  transition: .3s;
+  text-decoration: none;
+}
+
+.content-button:hover {
+  transition: .3s;
+  color: #333;
 }
 
 .index-text {
@@ -61,17 +87,20 @@ body {
 
 .description {
   font-size: 20px;
-  line-height: 20px;
+  line-height: 24px;
   text-align: center;
+  font-weight: lighter;
 }
 
-/* 各要素 */
+/* ---------- 以下各要素 ---------- */
 
+/* ---------- ヘッダー ---------- */
 header {
   background-color: #fff;
   width: 100%;
   position: fixed;
   top: 0;
+  z-index: 1;
 }
 
 .header-inner {
@@ -79,31 +108,34 @@ header {
   align-items: center;
 }
 
-.header-icon {
-  padding: 15px 0;
-  height: 40px;
-  border: solid crimson 1px;
+.header-icon i {
+  font-size: 40px;
+  color: gray;
 }
 
 .header-button {
   margin-left: auto;
 }
 
+/* ---------- テーマ ---------- */
 .theme {
+  margin-top: 70px;
   padding: 250px 0;
 }
 
-.main-text {
+.theme-title {
   font-size: 90px;
   font-weight: 700;
   margin-bottom: 25px;
+  color: #74cfae;
 }
 
-.flavor-text {
+.theme-flavor {
   font-size: 30px;
   color: #c0c0c0;
 }
 
+/* ---------- What we can do ---------- */
 .what_we_can_do {
   background-color: #74cfae;
   padding-top: 50px;
@@ -114,9 +146,58 @@ header {
   margin-bottom: 35px;
 }
 
-.our_leatest_work-button {
+.wwcd-image {
+  margin: 0 100px;
+}
+
+/* ---------- Our latest work ---------- */
+
+.our_latest_work {
+  padding: 60px 0 70px 0;
+}
+
+.image-box {
+  padding: 40px 0 90px 0;
+  font-size: 0;
+}
+
+.content-image {
+  opacity: 0.7;
+  transition: .3s;
+  margin-left: 100px;
+}
+
+.content-image:hover {
+  opacity: 1;
+}
+
+.content-image:nth-child(3n+1) {
+  margin-left: 0;
+}
+
+.content-image:nth-child(n+4) {
+  margin-top: 80px;
+}
+
+.olw-contents {
+  font-size: 0;
+}
+
+.olw-text {
+  width: 600px;
+}
+
+.olw-button {
+  margin-left: 90px;
+  padding-top: 14px;
+  vertical-align: top;
+}
+
+.olw-button a {
   padding: 14px 20px;
 }
+
+/* ---------- Our skills ---------- */
 
 .our_skills {
   background-color: #4e4e4e;
@@ -140,13 +221,20 @@ header {
   font-size: 16px;
 }
 
+/* ---------- SNS ---------- */
+
 .sns {
   padding: 200px 0 200px 0;
 }
 
 .sns-icon {
-  padding: 15px 0;
+  padding: 30px 0 30px 0;
   width: 185px;
+  color: #74cfae;
+  transition: .3s;
+}
+
+.sns-icon:hover {
   background-color: #fff;
 }
 
@@ -156,3 +244,5 @@ header {
   color: #fff;
   background: #74cfae;
 }
+
+/* ---------- 終わり ---------- */
