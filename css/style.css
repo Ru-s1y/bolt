@@ -1,32 +1,36 @@
 @charset "utf-8";
 
 /* ----------  テスト用 ----------  */
-/* 
-  .cb{
-    border: solid 1px red;
-  } 
-*/
+.cb{
+  border: solid 1px red;
+}
 
-/* 
-  .cb-b {
-    border: solid 1px blue;
-  } 
-*/
+/* .cb-b {
+  border: solid 1px blue;
+} */
 
 /* ---------- カスタムプロパティ ---------- */
 :root {
+  --default-color: #333;
   --theme-color: #74cfae;
-/* 
-  [呼び出し方]
-  background-color: var(--theme-color); 
-*/
+  --bg-gray: 	#f2f2f2;
+  --bg-darkgray: #4e4e4e;
+/* 呼び出し方] */
+/* background-color: var(--theme-color); */
 }
 
 /* ---------- 全体 ---------- */
 body {
-  color: #333;
-  font-family: Lato;
-  background-color: #f2f2f2;
+  color: var(--default-color);
+  font-family: "Lato";
+}
+
+a {
+  text-decoration: none;
+}
+
+.title-font {
+  font-family: "Raleway";
 }
 
 /* ---------- レイアウト系 ---------- */
@@ -64,14 +68,8 @@ body {
   margin: 0 auto;
 }
 
-.icons {
-  padding: 15px 0;
-  font-size: 40px;
-}
-
 .content-button {
   font-size: 12px;
-  padding: 14px 12px;
   color: white;
   background-color: var(--theme-color);
   transition: .3s;
@@ -79,8 +77,7 @@ body {
 }
 
 .content-button:hover {
-  transition: .3s;
-  color: #333;
+  color: var(--default-color);
 }
 
 .index-text {
@@ -100,17 +97,18 @@ body {
 /* ---------- 以下各要素 ---------- */
 
 /* ---------- ヘッダー ---------- */
-header {
+.header {
   background-color: #fff;
-  width: 100%;
+  /* position: fixed を使うとBlock要素が失われるため幅指定 */
+  width: 100%; 
   position: fixed;
   top: 0;
   z-index: 1;
 }
 
 .header-inner {
+  padding: 15px 0;
   display: flex;
-  align-items: center;
 }
 
 .header-icon i {
@@ -120,6 +118,7 @@ header {
 
 .header-button {
   margin-left: auto;
+  padding: 14px 12px;
 }
 
 .humbuger-menu {
@@ -133,12 +132,20 @@ header {
 }
 
 .humbuger-menu:hover {
-  color: #333;
+  color: var(--default-color);
+}
+
+/* ---------- main ---------- */
+.main {
+  padding-top: 70px;
 }
 
 /* ---------- theme ---------- */
 .theme {
-  margin-top: 70px;
+  background-color: var(--bg-gray);
+}
+
+.theme-inner {
   padding: 250px 0;
 }
 
@@ -157,11 +164,11 @@ header {
 /* ---------- What we can do ---------- */
 .what_we_can_do {
   background-color: var(--theme-color);
-  padding: 50px 0 25px 0;
   color: #fff;
 }
 
 .wwcd-inner {
+  padding: 50px 0 25px 0;
   display: flex;
 }
 
@@ -176,6 +183,10 @@ header {
 /* ---------- Our latest work ---------- */
 
 .our_latest_work {
+  background-color: var(--bg-gray);
+}
+
+.olw-inner {
   padding: 60px 0 70px 0;
 }
 
@@ -199,7 +210,7 @@ header {
   /* nは０から始まる */
   margin-left: 0;
 }
-
+/* 3つ目までの時は :nth-child(-n+3) */
 .content-image:nth-child(n+4) {
   /* n+4 : 4つ目以降 */
   margin-top: 80px;
@@ -216,11 +227,11 @@ header {
 
 .olw-button {
   margin-left: 90px;
-  /* padding-top: 14px; */
   vertical-align: top;
 }
 
-.olw-button a {
+.olw-button-email {
+  box-sizing: border-box;
   display: block;
   padding: 14px 20px;
 }
@@ -228,13 +239,16 @@ header {
 /* ---------- Our skills ---------- */
 
 .our_skills {
-  background-color: #4e4e4e;
+  background-color: var(--bg-darkgray);
   color: #fff;
+}
+
+.os-inner {
   padding: 70px 0 100px 0;
 }
 
-.our_skills h3 {
-  padding-bottom: 70px;
+.os-title {
+  margin-bottom: 70px;
 }
 
 .menu-content {
@@ -252,17 +266,19 @@ header {
 /* ---------- SNS ---------- */
 
 .sns {
-  padding: 200px 0 200px 0;
+  background-color: var(--bg-gray);
 }
 
 .sns-inner {
+  padding: 200px 0 200px 0;
   font-size: 0;
 }
 
 .sns-icon {
   padding: 30px 0 30px 0;
   width: 185px;
-  color: #74cfae;
+  font-size: 40px;
+  color: var(--theme-color);
   transition: .3s;
 }
 
@@ -294,7 +310,7 @@ header {
   }
 
   /* theme */
-  .theme {
+  .theme-inner {
     font-size: 80px;
     padding: 160px 0 130px 0;
   }
@@ -354,12 +370,12 @@ header {
   }
 
   /* SNS */
-  .sns {
-    padding: 50px 15px;
-  }
-
+  /* .sns {
+  } */
+  
   .sns-inner {
-    width: 100%;
+    padding: 50px 15px;
+    /* width: 100%; */
   }
 
   .sns-icon {
@@ -444,7 +460,7 @@ header {
     display: none;
   }
 
-  .what_we_can_do {
+  .wwcd-inner {
     padding-bottom: 0;
   }
 
