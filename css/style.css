@@ -279,7 +279,8 @@ header {
   background: var(--theme-color);
 }
 
-/* ---------- 以下レスポンシブ ---------- */
+
+/* ---------- 以下レスポンシブ -------------------- */
 
 /* ---------- スマホ用 ---------- */
 
@@ -438,9 +439,6 @@ header {
 /* ---------- PC用 ---------- */
 
 @media screen and (min-width: 1200px) {
-  .inner {
-    width: 1100px;
-  }
 
   .humbuger-menu {
     display: none;
@@ -449,9 +447,7 @@ header {
   .what_we_can_do {
     padding-bottom: 0;
   }
-  .wwcd-image {
-    margin-bottom: 0;
-  }
+
 }
 
 /* ---------- 終わり ---------- */
