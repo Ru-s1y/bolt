@@ -29,10 +29,6 @@ a {
   text-decoration: none;
 }
 
-.title-font {
-  font-family: "Raleway";
-}
-
 /* ---------- レイアウト系 ---------- */
 .t-center {
   text-align: center;
@@ -72,17 +68,13 @@ a {
   margin: 0 auto;
 }
 
-.content-button {
-  font-size: 12px;
-  color: white;
-  background-color: var(--theme-color);
-  transition: .3s;
-  text-decoration: none;
+.title-font {
+  font-family: "Raleway";
 }
 
-.content-button:hover {
-  color: var(--default-color);
-}
+.t-color-w {
+  color: #fff;
+} 
 
 .index-text {
   font-size: 24px;
@@ -98,7 +90,20 @@ a {
   font-weight: lighter;
 }
 
-/* ---------- 以下各要素 ---------- */
+.content-button {
+  font-size: 12px;
+  color: white;
+  background-color: var(--theme-color);
+  transition: .3s;
+  text-decoration: none;
+}
+
+.content-button:hover {
+  color: var(--default-color);
+}
+
+
+/* -------------------- 以下各要素 -------------------- */
 
 /* ---------- ヘッダー ---------- */
 .header {
@@ -171,7 +176,6 @@ a {
 /* ---------- What we can do ---------- */
 .what_we_can_do {
   background-color: var(--theme-color);
-  color: #fff;
 }
 
 .wwcd-inner {
@@ -245,7 +249,6 @@ a {
 /* ---------- Our skills ---------- */
 .our_skills {
   background-color: var(--bg-darkgray);
-  color: #fff;
 }
 
 .os-inner {
@@ -298,7 +301,6 @@ a {
 /* ---------- footer ---------- */
 
 .footer {
-  color: #fff;
   background: var(--theme-color);
 }
 
@@ -307,15 +309,10 @@ a {
   text-align: right;
 }
 
-/* ---------- 以下レスポンシブ -------------------- */
 
-/* ---------- スマホ・タブレット共用 ---------- */
-@media screen and (max-width: 1199px) {
-  .inner {
-    width: 97%;
-  }
-}
+/* --------------- 以下レスポンシブ -------------------- */
 
+/* ---------- picture・タブレット共用 ---------- */
 @media screen and (min-width: 768px) {
   .humbuger-menu {
     display: none;
@@ -323,8 +320,8 @@ a {
 }
 
 /* ---------- スマホ用 ---------- */
-
 @media screen and (max-width: 767px) {
+  /* header */
   .header-button {
     display: none;
   }
@@ -339,38 +336,10 @@ a {
     margin-bottom: 20px;
   }
 
-  /* what we can do */
-  .wwcd-inner {
-    display: block;
-    text-align: center;
-  }
-
-  .wwcd-image {
-    margin-bottom: 20px;
-  }
-
   /* Our latest work */
-  .content-image {
-    display: block;
-    text-align: center;
-    margin: 0;
-  }
 
   .content-image:nth-child(n+4) {
     margin-top: 0;
-  }
-
-  .content-image:nth-child(3n+1) {
-    margin-top: 80px;
-  }
-
-  .content-image:first-child {
-    margin-top: 0;
-  }
-
-  .olw-text {
-    width: 100%;
-    margin-bottom: 40px;
   }
 
   .olw-button {
@@ -380,13 +349,8 @@ a {
 
   /* Our skills */
   .menu-content {
-    display: block;
     margin: 0 auto;
     margin-top: 88px;
-  }
-
-  .menu-content:first-child {
-    margin-top: 0;
   }
 
   /* SNS */
@@ -402,13 +366,50 @@ a {
     display: block;
     width: 100%;
   }
-
 }
 
 /* ---------- タブレット用 ---------- */
 
 @media screen and (min-width: 768px) and (max-width: 1199px) {
   /* What we can do */
+  .wwcd-inner div p {
+    margin: 0 auto;
+    width: 80%;
+  }
+
+  /* Our latest work */
+  .content-image {
+    margin: 0;
+    display: block;
+    text-align: center;
+  }
+  
+  .content-image:nth-child(n+4) {
+    margin: 0;
+  }
+
+  .olw-text, .olw-button {
+    margin: 0 auto;
+  }
+
+  .olw-text {
+    display: block;
+  }
+
+  /* Our skills */
+  .menu-content {
+    display: block;
+    margin:88px 0 0 0;
+  }
+}
+
+/* ---------- スマホ・タブレット共用 ---------- */
+@media screen and (max-width: 1199px) {
+  .inner {
+    width: 97%;
+  }
+
+  /* what we can do */
   .wwcd-inner {
     display: block;
     text-align: center;
@@ -418,20 +419,10 @@ a {
     margin-bottom: 20px;
   }
 
-  .wwcd-inner div p {
-    margin: 0 auto;
-    width: 80%;
-  }
-
-  /* Our latest work */
   .content-image {
+    margin: 0;
     display: block;
-    margin: 0;
     text-align: center;
-  }
-  
-  .content-image:nth-child(n+4) {
-    margin: 0;
   }
 
   .content-image:nth-child(3n+1) {
@@ -442,20 +433,14 @@ a {
     margin-top: 0;
   }
 
-  .olw-text, .olw-button {
-    margin: 0 auto;
-  }
-
+  /* our latest work */
   .olw-text {
-    display: block;
     width: 100%;
     margin-bottom: 40px;
   }
 
-  /* Our skills */
   .menu-content {
     display: block;
-    margin:88px 0 0 0;
   }
 
   .menu-content:first-child {
@@ -469,7 +454,6 @@ a {
   .wwcd-inner {
     padding-bottom: 0;
   }
-
 }
 
 /* ---------- 終わり ---------- */
