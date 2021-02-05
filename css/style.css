@@ -103,6 +103,7 @@ a {
   width: 100%; 
   position: fixed;
   top: 0;
+  left: 0;
   z-index: 1;
 }
 
@@ -270,7 +271,8 @@ a {
 }
 
 .sns-inner {
-  padding: 200px 0 200px 0;
+  margin: 0 auto;
+  padding: 200px 0;
   font-size: 0;
 }
 
@@ -370,18 +372,14 @@ a {
   }
 
   /* SNS */
-  /* .sns {
-  } */
-  
   .sns-inner {
-    padding: 50px 15px;
-    /* width: 100%; */
+    /* padding: 50px 15px; */
+    padding: 50px 0;
   }
 
   .sns-icon {
-    width: 100%;
     display: block;
-    margin: 0 auto;
+    width: 100%;
   }
 
 }
