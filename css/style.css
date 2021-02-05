@@ -54,6 +54,10 @@ a {
   display: inline-block;
 }
 
+.d-inline {
+  display: inline;
+}
+
 .p-relative {
   position: relative;
 }
@@ -110,6 +114,7 @@ a {
 .header-inner {
   padding: 15px 0;
   display: flex;
+  justify-content: space-between;
 }
 
 .header-icon i {
@@ -118,12 +123,12 @@ a {
 }
 
 .header-button {
-  margin-left: auto;
+  /* margin-left: auto; */
+  /* → flex指定している親要素に"justify-content: space-between;" */
   padding: 14px 12px;
 }
 
 .humbuger-menu {
-  margin-left: auto;
   padding: 10px;
   border: 1px solid #ddd;
   border-radius: 4px;
@@ -153,11 +158,12 @@ a {
 .theme-title {
   font-size: 90px;
   font-weight: 700;
-  margin-bottom: 25px;
+  /* margin-bottom: 25px; */
   color: var(--theme-color);
 }
 
 .theme-flavor {
+  margin-top: 25px;
   font-size: 30px;
   color: #c0c0c0;
 }
@@ -182,7 +188,6 @@ a {
 }
 
 /* ---------- Our latest work ---------- */
-
 .our_latest_work {
   background-color: var(--bg-gray);
 }
@@ -192,7 +197,7 @@ a {
 }
 
 .images-container {
-  padding: 40px 0 90px 0;
+  margin: 40px 0 90px 0;
   font-size: 0;
 }
 
@@ -238,7 +243,6 @@ a {
 }
 
 /* ---------- Our skills ---------- */
-
 .our_skills {
   background-color: var(--bg-darkgray);
   color: #fff;
@@ -248,8 +252,8 @@ a {
   padding: 70px 0 100px 0;
 }
 
-.os-title {
-  margin-bottom: 70px;
+.os-contents {
+  margin-top: 70px;
 }
 
 .menu-content {
@@ -264,8 +268,11 @@ a {
   font-size: 16px;
 }
 
-/* ---------- SNS ---------- */
+.menu-content img {
+  margin-bottom: 16px;
+}
 
+/* ---------- SNS ---------- */
 .sns {
   background-color: var(--bg-gray);
 }
@@ -291,22 +298,33 @@ a {
 /* ---------- footer ---------- */
 
 .footer {
-  padding: 20px 0 25px 0;
-  text-align: right;
   color: #fff;
   background: var(--theme-color);
 }
 
+.footer-inner {
+  padding: 20px 0 25px 0;
+  text-align: right;
+}
 
 /* ---------- 以下レスポンシブ -------------------- */
+
+/* ---------- スマホ・タブレット共用 ---------- */
+@media screen and (max-width: 1199px) {
+  .inner {
+    width: 97%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .humbuger-menu {
+    display: none;
+  }
+}
 
 /* ---------- スマホ用 ---------- */
 
 @media screen and (max-width: 767px) {
-  .inner {
-    width: 97%;
-  }
-
   .header-button {
     display: none;
   }
@@ -372,8 +390,11 @@ a {
   }
 
   /* SNS */
+  .sns .inner {
+    width: 100%;
+  }
+
   .sns-inner {
-    /* padding: 50px 15px; */
     padding: 50px 0;
   }
 
@@ -387,14 +408,6 @@ a {
 /* ---------- タブレット用 ---------- */
 
 @media screen and (min-width: 768px) and (max-width: 1199px) {
-  .inner {
-    width: 97%;
-  }
-
-  .humbuger-menu {
-    display: none;
-  }
-
   /* What we can do */
   .wwcd-inner {
     display: block;
@@ -436,7 +449,7 @@ a {
   .olw-text {
     display: block;
     width: 100%;
-    padding-bottom: 40px;
+    margin-bottom: 40px;
   }
 
   /* Our skills */
@@ -453,11 +466,6 @@ a {
 /* ---------- PC用 ---------- */
 
 @media screen and (min-width: 1200px) {
-
-  .humbuger-menu {
-    display: none;
-  }
-
   .wwcd-inner {
     padding-bottom: 0;
   }
