@@ -12,6 +12,8 @@
     <meta name="description" content="This is my portfolio site.">
     <meta name="keyword" content="bolt, Bootstrap, portfolio">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- カスタムプロパティをIE11に対応させる。 -->
+    <script>window.MSInputMethodContext && document.documentMode && document.write('<script src="https://cdn.jsdelivr.net/gh/nuxodin/ie11CustomProperties@4.1.0/ie11CustomProperties.min.js"><\/script>');</script>
   </head>
   <body>
 
@@ -22,7 +24,11 @@
             <i class="fas fa-bolt"></i>
           </div>
           <a href="#" class="content-button header-button">Contact</a>
-          <a href="#" class="humbuger-menu"><i class="fas fa-bars"></i></a>
+          <div class="hb-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
         </div>
       </header>
 
@@ -31,7 +37,7 @@
         <div class="theme">
           <div class="inner t-center theme-inner">
             <h1 class="theme-title title-font">Bolt Theme</h1>
-            <h2 class="theme-flavor">FREE BOOTSTRAP THEMES</h2>
+            <p class="theme-flavor">FREE BOOTSTRAP THEMES</p>
           </div>
         </div>
 
@@ -39,9 +45,9 @@
         <section class="what_we_can_do">
           <div class="inner wwcd-inner t-color-w">
             <img class="wwcd-image"" src="img/iphone.png" alt="#">
-            <div class="t-center">
-              <h3 class="index-text">WHAT WE CAN DO?</h3>
-              <p class="description">
+            <div class="t-center wwcd-textcontent">
+              <h2 class="index-text">WHAT WE CAN DO?</h2>
+              <p class="description wwcd-text">
                 Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                 Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
                 when an unknown printer took a galley of type and scrambled it to make a type specimen book.
@@ -53,16 +59,27 @@
         <!-- our_latest_work -->
         <article class="our_latest_work">
           <div class="inner olw-inner">
-            <h3 class="index-text">OUR LATEST WORK</h3>
-            <!-- ul li を使う？ -->
-            <div class="images-container">
-              <a href="#" class="content-image"><img src="img/01.jpg" alt="#"></a>
-              <a href="#" class="content-image"><img src="img/02.jpg" alt="#"></a>
-              <a href="#" class="content-image"><img src="img/03.jpg" alt="#"></a>
-              <a href="#" class="content-image"><img src="img/04.jpg" alt="#"></a>
-              <a href="#" class="content-image"><img src="img/05.jpg" alt="#"></a>
-              <a href="#" class="content-image"><img src="img/06.jpg" alt="#"></a>
-            </div>
+            <h2 class="index-text">OUR LATEST WORK</h2>
+            <ul class="images-container">
+              <li class="content-image">
+                <a class="d-inlineblock" href><img src="img/01.jpg" alt="#"></a>
+              </li>
+              <li class="content-image">
+                <a class="d-inlineblock" href><img src="img/02.jpg" alt="#"></a>
+              </li>
+              <li class="content-image">
+                <a class="d-inlineblock" href><img src="img/03.jpg" alt="#"></a>
+              </li>
+              <li class="content-image">
+                <a class="d-inlineblock" href><img src="img/04.jpg" alt="#"></a>
+              </li>
+              <li class="content-image">
+                <a class="d-inlineblock" href><img src="img/05.jpg" alt="#"></a>
+              </li>
+              <li class="content-image">
+                <a class="d-inlineblock" href><img src="img/06.jpg" alt="#"></a>
+              </li>
+            </ul>
             <div class="t-center olw-contents">
               <p class="d-inlineblock description olw-text">
                 Lorem Ipsum is simply dummy text of the printing and typesetting industry.
@@ -80,7 +97,7 @@
         <!-- our_skills -->
         <section class="our_skills">
           <div class="inner os-inner t-color-w">
-            <h3 class="index-text">OUR SKILLS</h3>
+            <h2 class="index-text">OUR SKILLS</h2>
             <div class="t-center os-contents">
               <figure class="d-inlineblock menu-content">
                 <img src="img/circle_01.png" alt="js">
@@ -105,16 +122,16 @@
         <!-- sns -->
         <nav class="sns">
           <ul class="inner sns-inner t-center">
-            <li class="d-inline">
+            <li class="sns-content">
               <a class="sns-icon d-inlineblock" href><i class="fab fa-facebook-f"></i></a>
             </li>
-            <li class="d-inline">
+            <li class="sns-content">
               <a class="sns-icon d-inlineblock" href><i class="fab fa-dribbble"></i></a>
             </li>
-            <li class="d-inline">
+            <li class="sns-content">
               <a class="sns-icon d-inlineblock" href><i class="fab fa-twitter"></i></a>
             </li>
-            <li class="d-inline">
+            <li class="sns-content">
               <a class="sns-icon d-inlineblock" href><i class="fas fa-envelope"></i></a>
             </li>
           </ul>
@@ -123,7 +140,7 @@
 
       <footer class="footer">
         <div class="inner footer-inner t-color-w">
-          <div>Crafted with <i class="fas fa-heart"></i> by BlackTie.co.</div>
+          <p>Crafted with <i class="fas fa-heart"></i> by BlackTie.co.</p>
         </div>
       </footer>
     </div>

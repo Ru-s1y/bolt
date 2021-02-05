@@ -1,15 +1,18 @@
 @charset "utf-8";
 
 /* ----------  テスト用 ----------  */
-.cb{
+/* .cb{
   border: solid 1px red;
-}
+} */
 
 /* .cb-b {
   border: solid 1px blue;
 } */
+/* ----------  テストここまで ----------  */
 
 /* ---------- カスタムプロパティ ---------- */
+
+/* IE対応用 head scriptタグ参照 */
 :root {
   --default-color: #333;
   --theme-color: #74cfae;
@@ -29,7 +32,7 @@ a {
   text-decoration: none;
 }
 
-/* ---------- レイアウト系 ---------- */
+/* ---------- プロパティ系 ---------- */
 .t-center {
   text-align: center;
 }
@@ -102,8 +105,7 @@ a {
   color: var(--default-color);
 }
 
-
-/* -------------------- 以下各要素 -------------------- */
+/* -------------------- 基本レイアウト -------------------- */
 
 /* ---------- ヘッダー ---------- */
 .header {
@@ -128,22 +130,25 @@ a {
 }
 
 .header-button {
-  /* margin-left: auto; */
-  /* → flex指定している親要素に"justify-content: space-between;" */
   padding: 14px 12px;
 }
 
-.humbuger-menu {
+.hb-menu {
+  display: inline-block;
   padding: 10px;
   border: 1px solid #ddd;
   border-radius: 4px;
-  text-decoration: none;
-  color: #ddd;
-  transition: .3s;
+  cursor: pointer;
 }
 
-.humbuger-menu:hover {
-  color: var(--default-color);
+.hb-menu span {
+  display: block;
+  width: 22px;
+  border: 1px solid #ddd;
+}
+
+.hb-menu span:nth-child(2) {
+  margin: 5px 0;
 }
 
 /* ---------- main ---------- */
@@ -163,7 +168,6 @@ a {
 .theme-title {
   font-size: 90px;
   font-weight: 700;
-  /* margin-bottom: 25px; */
   color: var(--theme-color);
 }
 
@@ -183,12 +187,12 @@ a {
   display: flex;
 }
 
-.what_we_can_do h3 {
-  margin-bottom: 35px;
-}
-
 .wwcd-image {
   margin: 0 100px;
+}
+
+.wwcd-text {
+  margin-top: 35px;
 }
 
 /* ---------- Our latest work ---------- */
@@ -207,12 +211,15 @@ a {
 
 .content-image {
   display: inline-block;
-  opacity: 0.7;
-  transition: .3s;
   margin-left: 100px;
 }
 
-.content-image:hover {
+.content-image a {
+  opacity: .7;
+  transition: .3s;
+}
+
+.content-image a:hover {
   opacity: 1;
 }
 
@@ -267,12 +274,9 @@ a {
   margin-left: 0;
 }
 
-.menu-content figure figcaption {
+.menu-content figcaption {
+  margin-top: 16px;
   font-size: 16px;
-}
-
-.menu-content img {
-  margin-bottom: 16px;
 }
 
 /* ---------- SNS ---------- */
@@ -286,8 +290,12 @@ a {
   font-size: 0;
 }
 
+.sns-content {
+  display: inline-block;
+}
+
 .sns-icon {
-  padding: 30px 0 30px 0;
+  padding: 30px 0;
   width: 185px;
   font-size: 40px;
   color: var(--theme-color);
@@ -299,7 +307,6 @@ a {
 }
 
 /* ---------- footer ---------- */
-
 .footer {
   background: var(--theme-color);
 }
@@ -309,12 +316,14 @@ a {
   text-align: right;
 }
 
+/* --------------- 基本レイアウトここまで -------------------- */
+
 
 /* --------------- 以下レスポンシブ -------------------- */
-
-/* ---------- picture・タブレット共用 ---------- */
+/* ---------- PC・タブレット共用 ---------- */
 @media screen and (min-width: 768px) {
-  .humbuger-menu {
+  .hb-menu {
+    /* ハンバーガーを隠す */
     display: none;
   }
 }
@@ -323,28 +332,17 @@ a {
 @media screen and (max-width: 767px) {
   /* header */
   .header-button {
+    /* ハンバーガーに切り替える */
     display: none;
   }
 
   /* theme */
   .theme-inner {
-    font-size: 80px;
     padding: 160px 0 130px 0;
   }
-
+  
   .theme-title {
-    margin-bottom: 20px;
-  }
-
-  /* Our latest work */
-
-  .content-image:nth-child(n+4) {
-    margin-top: 0;
-  }
-
-  .olw-button {
-    margin: 0;
-    text-align: center;
+    font-size: 80px;
   }
 
   /* Our skills */
@@ -362,36 +360,18 @@ a {
     padding: 50px 0;
   }
 
-  .sns-icon {
+  .sns-content {
     display: block;
+  }
+
+  .sns-icon {
     width: 100%;
   }
 }
 
 /* ---------- タブレット用 ---------- */
-
 @media screen and (min-width: 768px) and (max-width: 1199px) {
-  /* What we can do */
-  .wwcd-inner div p {
-    margin: 0 auto;
-    width: 80%;
-  }
-
   /* Our latest work */
-  .content-image {
-    margin: 0;
-    display: block;
-    text-align: center;
-  }
-  
-  .content-image:nth-child(n+4) {
-    margin: 0;
-  }
-
-  .olw-text, .olw-button {
-    margin: 0 auto;
-  }
-
   .olw-text {
     display: block;
   }
@@ -405,24 +385,37 @@ a {
 
 /* ---------- スマホ・タブレット共用 ---------- */
 @media screen and (max-width: 1199px) {
+  /* 共通 */
   .inner {
     width: 97%;
   }
 
   /* what we can do */
   .wwcd-inner {
+    /* flexを解除して中央寄せ */
     display: block;
     text-align: center;
   }
 
   .wwcd-image {
-    margin-bottom: 20px;
+    margin: 0 auto;
   }
 
+  .wwcd-textcontent {
+    margin-top: 20px;
+  }
+
+  /* Our latest work */
   .content-image {
+    /* margin-leftの解除 */
     margin: 0;
+    /* inline-boxの解除と中央寄せ */
     display: block;
     text-align: center;
+  }
+
+  .content-image:nth-child(n+4) {
+    margin: 0;
   }
 
   .content-image:nth-child(3n+1) {
@@ -434,11 +427,20 @@ a {
   }
 
   /* our latest work */
+  .images-container {
+    margin-bottom: 80px;
+  }
+
+  .olw-text, .olw-button {
+    margin: 0 auto;
+  }
+
   .olw-text {
     width: 100%;
     margin-bottom: 40px;
   }
 
+  /* Our Skills */
   .menu-content {
     display: block;
   }
@@ -449,7 +451,6 @@ a {
 }
 
 /* ---------- PC用 ---------- */
-
 @media screen and (min-width: 1200px) {
   .wwcd-inner {
     padding-bottom: 0;
