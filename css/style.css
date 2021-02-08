@@ -35,7 +35,7 @@ a {
 
 .content-button {
   font-size: 12px;
-  color: white;
+  color: #fff;
   background-color: #74cfae;
   transition: .3s;
   text-decoration: none;
@@ -51,7 +51,7 @@ a {
 .header {
   background-color: #fff;
   /* position: fixed を使うとBlock要素が失われるため幅指定 */
-  width: 100%; 
+  width: 100%;
   position: fixed;
   top: 0;
   left: 0;
@@ -66,7 +66,7 @@ a {
 
 .header-icon i {
   font-size: 40px;
-  color: gray;
+  color: #333;
 }
 
 .header-button {
@@ -91,6 +91,8 @@ a {
 .hb-menu span:nth-child(2) {
   margin: 5px 0;
 }
+
+/* margin-topで統一 */
 
 /* ---------- main ---------- */
 .main {
@@ -407,3 +409,5 @@ a {
   t-**やd-**というプロパティ系のクラスを使うかどうかは分かれるところ。
   重複しやすいため統一しないとわかりづらい。
 */
+/* オブジェクト指向的な書き方にしてみる。
+"オブジェクト指向"はGizTechを参照 */
