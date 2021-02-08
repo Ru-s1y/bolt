@@ -1,68 +1,13 @@
 @charset "utf-8";
 
-/* ----------  テスト用 ----------  */
-/* .cb{
-  border: solid 1px red;
-} */
-
-/* .cb-b {
-  border: solid 1px blue;
-} */
-/* ----------  テストここまで ----------  */
-
-/* ---------- カスタムプロパティ ---------- */
-
-/* IE対応用 head scriptタグ参照 */
-:root {
-  --default-color: #333;
-  --theme-color: #74cfae;
-  --bg-gray: 	#f2f2f2;
-  --bg-darkgray: #4e4e4e;
-/* 呼び出し方] */
-/* background-color: var(--theme-color); */
-}
-
 /* ---------- 全体 ---------- */
 body {
-  color: var(--default-color);
+  color: #333;
   font-family: "Lato";
 }
 
 a {
   text-decoration: none;
-}
-
-/* ---------- プロパティ系 ---------- */
-.t-center {
-  text-align: center;
-}
-
-.m-center {
-  margin: 0 auto;
-}
-
-.d-flex {
-  display: flex;
-}
-
-.d-block {
-  display: block;
-}
-
-.d-inlineblock {
-  display: inline-block;
-}
-
-.d-inline {
-  display: inline;
-}
-
-.p-relative {
-  position: relative;
-}
-
-.p-absolute {
-  position: absolute;
 }
 
 /* ---------- 共通 ---------- */
@@ -75,14 +20,9 @@ a {
   font-family: "Raleway";
 }
 
-.t-color-w {
-  color: #fff;
-} 
-
 .index-text {
   font-size: 24px;
   line-height: 24px;
-  font-family: Raleway;
   text-align: center;
 }
 
@@ -96,13 +36,13 @@ a {
 .content-button {
   font-size: 12px;
   color: white;
-  background-color: var(--theme-color);
+  background-color: #74cfae;
   transition: .3s;
   text-decoration: none;
 }
 
 .content-button:hover {
-  color: var(--default-color);
+  color: #333;
 }
 
 /* -------------------- 基本レイアウト -------------------- */
@@ -115,7 +55,7 @@ a {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 1;
+  z-index: 100;
 }
 
 .header-inner {
@@ -134,7 +74,8 @@ a {
 }
 
 .hb-menu {
-  display: inline-block;
+  /* display: inline-block; */
+  display: none;
   padding: 10px;
   border: 1px solid #ddd;
   border-radius: 4px;
@@ -158,17 +99,18 @@ a {
 
 /* ---------- theme ---------- */
 .theme {
-  background-color: var(--bg-gray);
+  background-color: #f2f2f2;
 }
 
 .theme-inner {
+  text-align: center;
   padding: 250px 0;
 }
 
 .theme-title {
   font-size: 90px;
   font-weight: 700;
-  color: var(--theme-color);
+  color: #74cfae;
 }
 
 .theme-flavor {
@@ -179,16 +121,21 @@ a {
 
 /* ---------- What we can do ---------- */
 .what_we_can_do {
-  background-color: var(--theme-color);
+  background-color: #74cfae;
 }
 
 .wwcd-inner {
-  padding: 50px 0 25px 0;
+  padding-top: 50px;
+  color: #fff;
   display: flex;
 }
 
 .wwcd-image {
   margin: 0 100px;
+}
+
+.wwcd-textcontent {
+  text-align: center;
 }
 
 .wwcd-text {
@@ -197,7 +144,7 @@ a {
 
 /* ---------- Our latest work ---------- */
 .our_latest_work {
-  background-color: var(--bg-gray);
+  background-color: #f2f2f2;
 }
 
 .olw-inner {
@@ -205,7 +152,7 @@ a {
 }
 
 .images-container {
-  margin: 40px 0 90px 0;
+  margin-top: 40px;
   font-size: 0;
 }
 
@@ -215,6 +162,7 @@ a {
 }
 
 .content-image a {
+  display: inline-block;
   opacity: .7;
   transition: .3s;
 }
@@ -234,15 +182,19 @@ a {
 }
 
 .olw-contents {
+  margin-top: 90px;
   font-size: 0;
   display: block;
+  text-align: center;
 }
 
 .olw-text {
+  display: inline-block;
   width: 600px;
 }
 
 .olw-button {
+  display: inline-block;
   margin-left: 90px;
   vertical-align: top;
 }
@@ -255,18 +207,21 @@ a {
 
 /* ---------- Our skills ---------- */
 .our_skills {
-  background-color: var(--bg-darkgray);
+  background-color: #4e4e4e;
 }
 
 .os-inner {
   padding: 70px 0 100px 0;
+  color: #fff;
 }
 
 .os-contents {
+  text-align: center;
   margin-top: 70px;
 }
 
 .menu-content {
+  display: inline-block;
   margin-left: 180px;
 }
 
@@ -281,11 +236,11 @@ a {
 
 /* ---------- SNS ---------- */
 .sns {
-  background-color: var(--bg-gray);
+  background-color: #f2f2f2;
 }
 
 .sns-inner {
-  margin: 0 auto;
+  text-align: center;
   padding: 200px 0;
   font-size: 0;
 }
@@ -295,10 +250,11 @@ a {
 }
 
 .sns-icon {
+  display: inline-block;
   padding: 30px 0;
   width: 185px;
   font-size: 40px;
-  color: var(--theme-color);
+  color: #74cfae;
   transition: .3s;
 }
 
@@ -308,12 +264,13 @@ a {
 
 /* ---------- footer ---------- */
 .footer {
-  background: var(--theme-color);
+  background: #74cfae;
 }
 
 .footer-inner {
   padding: 20px 0 25px 0;
   text-align: right;
+  color: #fff;
 }
 
 /* --------------- 基本レイアウトここまで -------------------- */
@@ -321,67 +278,12 @@ a {
 
 /* --------------- 以下レスポンシブ -------------------- */
 /* ---------- PC・タブレット共用 ---------- */
-@media screen and (min-width: 768px) {
+/* @media screen and (min-width: 768px) {
   .hb-menu {
-    /* ハンバーガーを隠す */
+    ハンバーガーを隠す
     display: none;
   }
-}
-
-/* ---------- スマホ用 ---------- */
-@media screen and (max-width: 767px) {
-  /* header */
-  .header-button {
-    /* ハンバーガーに切り替える */
-    display: none;
-  }
-
-  /* theme */
-  .theme-inner {
-    padding: 160px 0 130px 0;
-  }
-  
-  .theme-title {
-    font-size: 80px;
-  }
-
-  /* Our skills */
-  .menu-content {
-    margin: 0 auto;
-    margin-top: 88px;
-  }
-
-  /* SNS */
-  .sns .inner {
-    width: 100%;
-  }
-
-  .sns-inner {
-    padding: 50px 0;
-  }
-
-  .sns-content {
-    display: block;
-  }
-
-  .sns-icon {
-    width: 100%;
-  }
-}
-
-/* ---------- タブレット用 ---------- */
-@media screen and (min-width: 768px) and (max-width: 1199px) {
-  /* Our latest work */
-  .olw-text {
-    display: block;
-  }
-
-  /* Our skills */
-  .menu-content {
-    display: block;
-    margin:88px 0 0 0;
-  }
-}
+} */
 
 /* ---------- スマホ・タブレット共用 ---------- */
 @media screen and (max-width: 1199px) {
@@ -393,6 +295,7 @@ a {
   /* what we can do */
   .wwcd-inner {
     /* flexを解除して中央寄せ */
+    padding-bottom: 25px;
     display: block;
     text-align: center;
   }
@@ -427,8 +330,9 @@ a {
   }
 
   /* our latest work */
-  .images-container {
-    margin-bottom: 80px;
+
+  .olw-contents {
+    margin-top: 80px;
   }
 
   .olw-text, .olw-button {
@@ -437,12 +341,16 @@ a {
 
   .olw-text {
     width: 100%;
-    margin-bottom: 40px;
+  }
+
+  .olw-button {
+    margin-top: 40px;
   }
 
   /* Our Skills */
   .menu-content {
     display: block;
+    margin: 88px 0 0 0;
   }
 
   .menu-content:first-child {
@@ -450,11 +358,52 @@ a {
   }
 }
 
-/* ---------- PC用 ---------- */
-@media screen and (min-width: 1200px) {
-  .wwcd-inner {
-    padding-bottom: 0;
+/* ---------- スマホ用 ---------- */
+@media screen and (max-width: 767px) {
+  /* header */
+  .header-button {
+    display: none;
+  }
+
+  .hb-menu {
+    display: inline-block;
+  }
+
+  /* theme */
+  .theme-inner {
+    padding: 160px 0 130px 0;
+  }
+  
+  .theme-title {
+    font-size: 80px;
+  }
+
+  /* SNS */
+  .sns .inner {
+    width: 100%;
+  }
+
+  .sns-inner {
+    padding: 50px 0;
+  }
+
+  .sns-content {
+    display: block;
+  }
+
+  .sns-icon {
+    width: 100%;
   }
 }
 
 /* ---------- 終わり ---------- */
+
+/* 独自のカスタムプロパティはかえってわかりづらくなる。 */
+/* marginは上と左で統一する */
+/* marginやpaddingは1行にまとめる */
+/* mediaクエリの順番 */
+/* hrefは=""までかく */
+/* 
+  t-**やd-**というプロパティ系のクラスを使うかどうかは分かれるところ。
+  重複しやすいため統一しないとわかりづらい。
+*/
